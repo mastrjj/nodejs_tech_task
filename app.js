@@ -21,7 +21,6 @@ fs.createReadStream('Amenity.csv')
 app.get('/reservations/:amenityId/:date', (req, res) => {
   if (amenitysIds.includes(req.params.amenityId)) {
     const reservationsDates = reservations.filter(element => element.amenity_id == req.params.amenityId && element.date == req.params.date);
-    console.log(reservationsDates);
     if (reservationsDates.length > 0) {
       results = [];
       const amenity = amenitys.filter(element => element.id == req.params.amenityId);
